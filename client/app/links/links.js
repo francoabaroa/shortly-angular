@@ -8,7 +8,7 @@ angular.module('shortly.links', [])
   // $scope.data.links = allLinks;
 
   Links.getAll().then(function (links) {
-    $scope.data.links = links
+    $scope.data.links = links;
   })
   .catch(function(err) {
     console.error(err);

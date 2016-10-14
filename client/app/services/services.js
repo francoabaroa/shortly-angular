@@ -21,14 +21,14 @@ angular.module('shortly.services', [])
       //   url: '/api/links/',
       //   data: link
       // })
-    return $http({
-       method: 'POST',
-       url: '/api/links',
-       headers: {
-         'Content-Type': 'application/json'
-       },
-       data: link
-     })
+      return $http({
+        method: 'POST',
+        url: '/api/links',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: link
+      })
       .then(function(resp) {
         return resp;
       });
