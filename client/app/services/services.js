@@ -9,19 +9,28 @@ angular.module('shortly.services', [])
         url: '/api/links'
       })
       .then(function(resp) {
-        console.log('RESPONSE FROM LINKS GET REQUEST: ', resp);
+        console.log('response: ', resp);
+        console.log('response.data: ', resp.data);
+
         return resp.data;
       });
     },
     addOne: function(link) {
-      return $http({
-        method: 'POST',
-        url: '/api/links/',
-        data: link
-      })
+      // return $http({
+      //   method: 'POST',
+      //   url: '/api/links/',
+      //   data: link
+      // })
+    return $http({
+       method: 'POST',
+       url: '/api/links',
+       headers: {
+         'Content-Type': 'application/json'
+       },
+       data: link
+     })
       .then(function(resp) {
-        console.log('RESPONSE FROM LINKS GET REQUEST: ', resp);
-        return resp.data;
+        return resp;
       });
     }
   };

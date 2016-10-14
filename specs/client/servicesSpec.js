@@ -57,6 +57,7 @@ describe('Services', function () {
         });
 
       Links.addOne(github).then(function (resp) {
+        console.log('the response obj in the test is: ', resp);
         expect(resp.status).to.equal(201);
         expect(resp.data.title).to.equal('Hack Reactor Labs');
       });
@@ -67,5 +68,3 @@ describe('Services', function () {
   });
 
 });
-
-
