@@ -1,8 +1,26 @@
-<div id='signup'>
+<!-- <div id='signup'>
   <h1>signup</h1>
   <form name="signupForm" ng-submit='signup()'>
     <input type='text' ng-model='user.username'>
     <input type="password" ng-model='user.password'>
+    <button>signup</button>
+  </form>
+  <a href="#/signin">Already have an account? <strong>Signin</strong> ...</a>
+</div>
+ -->
+
+<div id='signup'>
+  <h1>signup</h1>
+  <form name="signupForm" ng-submit='signup()'>
+    <input type="text" placeholder='username' ng-model="user.username" name="username" required />
+    <div ng-messages="signupForm.username.$error">
+      <div ng-message="required"></div>
+    </div>
+    <input type="password" ng-model="user.password" name="password" required minlength="8" />
+    <div ng-messages="signupForm.password.$error">
+      <div ng-message="required"></div>
+      <div ng-message="minlength"></div>
+    </div>
     <button>signup</button>
   </form>
   <a href="#/signin">Already have an account? <strong>Signin</strong> ...</a>
