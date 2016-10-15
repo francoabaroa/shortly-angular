@@ -1,9 +1,29 @@
-<div id='signin'>
+<!-- <div id='signin'>
   <h1>signin</h1>
   <form name="signinForm" ng-submit='signin()'>
     <input type='text' ng-model='user.username'>
     <input type="password" ng-model='user.password'>
     <button>signin</button>
+  </form>
+  <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
+</div>
+
+ -->
+
+
+<div id='signin' ng-controller='AuthController'>
+  <h1>signin</h1>
+  <div ng-message="required" class='red'> {{error}} </div>
+  <form name="signin">
+    <input type="text" placeholder='username' ng-model="user.username" name="username" required />
+    <div ng-messages="signin.username.$error">
+      <div ng-message="required"></div>
+    </div>
+    <input type="password" placeholder='password' ng-model="user.password" name="password" required minlength="8" />
+    <div ng-messages="signin.password.$error">
+      <div ng-message="minlength"></div>
+    </div>
+    <button ng-click='signinUser()'>Sign In</button>
   </form>
   <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
 </div>

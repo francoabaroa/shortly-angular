@@ -1,8 +1,19 @@
 <div id='container' ng-controller='LinksController'>
-  <!-- Your html here -->
-  <h1> Links Page </h1>
-  <!-- <pre> {{ data.links }}</pre> -->
-  <ul>
-    <li ng-repeat="link in data.links">{{ link.url }}</li>
-  </ui>
+  <h1> Links Page </h1><br>
+
+    <input type='text' placeholder='Search' ng-model='linkSearch'><br>
+    <div ng-repeat="link in data.links | orderBy:'-visits' | filter:linkSearch">
+      <div class='link-panel'>
+        <div class='title-box'>
+          <a class='title-text' href='/{{ link.code }}'> {{ link.url }}</a>
+          <p class='url-text'>{{ link.baseUrl }}/{{ link.code }}</p>
+        </div>
+        <div class='view-counter-box'>
+          <p class="counter-num">{{ link.visits }}</p>
+          <p class='views-text'> views</p>
+        </div>
+      </div> 
+    </div>
+
+
 </div>

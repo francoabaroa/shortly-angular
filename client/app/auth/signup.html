@@ -16,7 +16,7 @@
     <div ng-messages="signupForm.username.$error">
       <div ng-message="required"></div>
     </div>
-    <input type="password" ng-model="user.password" name="password" required minlength="8" />
+    <input type="password" placeholder='password' ng-model="user.password" name="password" required minlength="8" />
     <div ng-messages="signupForm.password.$error">
       <div ng-message="required"></div>
       <div ng-message="minlength"></div>

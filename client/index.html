@@ -10,13 +10,14 @@
 
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
     <div ng-view></div>
-    <a href ='#/links'> Links </a>
-    <a href ='#/shorten'> Shorten </a>
+    <a href ='#/links' class="tab-button btn-default "> Links </a>
+    <a href ='#/shorten' class="tab-button btn-default "> Shorten </a>
+    <a href ='#/signin' ng-controller="LogoutController" ng-click="signout()" class="tab-button btn-default "> Log Out </a>
 
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-route/angular-route.js"></script>
-
     <script src="app/auth/auth.js"></script>
+    <script src="app/auth/logoutController.js"></script>
     <script src="app/links/links.js"></script>
     <script src="app/shorten/shorten.js"></script>
     <script src="app/services/services.js"></script>

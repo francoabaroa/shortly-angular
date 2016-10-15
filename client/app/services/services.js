@@ -9,8 +9,6 @@ angular.module('shortly.services', [])
         url: '/api/links'
       })
       .then(function(resp) {
-        console.log('response: ', resp);
-        console.log('response.data: ', resp.data);
 
         return resp.data;
       });
@@ -47,7 +45,12 @@ angular.module('shortly.services', [])
       data: user
     })
     .then(function (resp) {
+      console.log('RESPONSE TOKEN: ', resp.data.token);
       return resp.data.token;
+    })
+    .catch(function (err) {
+      console.log('error message after posting a new user: ', err);
+      return err;
     });
   };
 

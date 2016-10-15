@@ -62,6 +62,7 @@ module.exports = {
         }
 
         link.visits++;
+        console.log(link);
         link.save(function (err, savedLink) {
           if (err) {
             next(err);
