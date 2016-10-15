@@ -4,15 +4,23 @@ angular.module('shortly.links', [])
   // Your code here
   // Links refers to the Links factory in Services
   $scope.data = {};
+  $scope.text = 'hello franco';
   // var allLinks = Links.getAll();
   // $scope.data.links = allLinks;
-
-  Links.getAll().then(function (links) {
-    $scope.data.links = links;
-  })
-  .catch(function(err) {
-    console.error(err);
-  });
+  $scope.getAll = function () {
+    Links.getAll().then(function (links) {
+      $scope.data.links = links;
+    }).catch(function (err) {
+      console.error(err);
+    });
+  };
+  $scope.getAll();
+  // Links.getAll().then(function (links) {
+  //   $scope.data.links = links;
+  // })
+  // .catch(function(err) {
+  //   console.error(err);
+  // });
 
 
 
